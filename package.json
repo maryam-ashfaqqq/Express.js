@@ -4,7 +4,7 @@
 "description": "node js and express js ",
 "license":"ISC",
 "author": "Maryam",
-"type": "commonjs",
+"type": "module",
 "main": "index.js",
 "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1"

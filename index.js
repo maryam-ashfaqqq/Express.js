@@ -1,16 +1,20 @@
-const express = require("express");
+// const express = require("express");
+
+import express from "express"
+import home from "./pages/home.js";
+import about from "./pages/about.js";
+import line from "./pages/lines/line.js";
 const app = express();
 
-// const express = require("express")();
-app.get("/",(req , resp)=>{
-    
-    
-resp.send("<h1>Home Page</h1>")
+app.get("/",(req , resp)=>{ 
+resp.send(home())
 });
+
 app.get("/about",(req , resp)=>{
-resp.send("<h1>About Page</h1>")
+resp.send(about())
 });
-app.get("/contact",(req , resp)=>{
-resp.send("<h1>Contact Page</h1>")
+
+app.get("/about/line",(req , resp)=>{
+resp.send(line())
 });
 app.listen(3200)
