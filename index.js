@@ -3,7 +3,8 @@
 import express from "express"
 import home from "./pages/home.js";
 import about from "./pages/about.js";
-import line from "./pages/lines/line.js";
+import login from "./pages/lines/login.js";
+import submit from "./pages/lines/submit.js";
 const app = express();
 
 app.get("/",(req , resp)=>{ 
@@ -14,7 +15,10 @@ app.get("/about",(req , resp)=>{
 resp.send(about())
 });
 
-app.get("/about/line",(req , resp)=>{
-resp.send(line())
+app.get("/login",(req , resp)=>{
+resp.send(login())
+});
+app.post("/submit" , (req , resp)=>{
+  resp.send(submit())
 });
 app.listen(3200)
