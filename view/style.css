@@ -1,0 +1,15 @@
+ 
+        h1{
+            color: darkgreen;
+        }
+        a{
+            text-decoration: none;
+            color: brown;
+            background-color: cyan;
+        }
+        a:hover{
+            background-color: chocolate;
+            color: darkgrey;
+            
+        }
+    
