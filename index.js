@@ -1,4 +1,6 @@
- // const express = require("express");
+
+// const express = require("express");
+
                                                  //  Render HTML element in Express
 // import express from "express"
 // import home from "./pages/home.js";
@@ -61,7 +63,7 @@
 //   app.listen(3300)
 
 
-                                                          //Application level Middleware in express js
+                                                     //Application level Middleware in express js
                                                       
 //      import express from "express"
 //      const app = express(); 
@@ -107,26 +109,88 @@
 
                                                              // For ipCheck
 
-        import express from "express"
-     const app = express(); 
+//         import express from "express"
+//      const app = express(); 
     
- function ipCheck(req  , resp ,next) {
-  const ip = req.socket.remoteAddress
- console.log(ip);
- if (ip.includes("192.168.100.46")) {
-  resp.send("Alert! , You cannot Access")
- }else{
-next();
-}}
- app.use(ipCheck)
-    app.get("/",(req , resp)=>{
-      resp.send("Home Page")                                      
-});
- app.get("/about",(req , resp)=>{
-      resp.send("About Page")                                      
-});
- app.get("/login",(req , resp)=>{
-      resp.send("Login Page")                                      
-});
-app.listen(3600)
-console.log('hey');
+//  function ipCheck(req  , resp ,next) {
+//   const ip = req.socket.remoteAddress
+//  console.log(ip);
+//  if (ip.includes("192.168.100.46")) {
+//   resp.send("Alert! , You cannot Access")
+//  }else{
+// next();
+// }}
+//  app.use(ipCheck)
+//     app.get("/",(req , resp)=>{
+//       resp.send("Home Page")                                      
+// });
+//  app.get("/about",(req , resp)=>{
+//       resp.send("About Page")                                      
+// });
+//  app.get("/login",(req , resp)=>{
+//       resp.send("Login Page")                                      
+// });
+// app.listen(3600)
+
+                                                         // Route Middleware
+
+// import express from "express"
+//      const app = express(); 
+//     function ageCheck(req  , resp ,next) {
+//         console.log(req.query.age);
+        
+//    if (!req.query.age || req.query.age<18) {
+//     resp.send("Alert ! You can not access")
+//    }
+// else{
+//     next()
+// }}
+//   app.get("/",(req  , resp )=> {
+// resp.send("Home Page")
+//   });
+//  app.get("/about",(req , resp)=>{
+//         resp.send("About Page")                                     
+//     });
+//   app.get("/login",ageCheck,(req , resp)=>{
+//       resp.send("Login Page")                                      
+//      });
+
+
+// app.listen(3700)
+
+                                                      //   Built in Middleware
+                        
+//  import express from "express"
+//       const app = express(); 
+//  app.get("/",(req  , resp )=> {
+//  resp.send("Home Page")
+//    });
+//   app.get("/about",(req , resp)=>{
+//          resp.send("About Page")                                     
+//     });
+//     app.use(express.urlencoded({extended:false}))
+//    app.get("/login",(req , resp)=>{
+//        resp.send(`<form action="/submit" method="post">
+//     <h1>Web Page</h1>
+//     <br />
+//     <br />
+//     <input type="text" name="name" placeholder="enter name">
+//     <br />
+//     <br />
+//     <input type="password" name="password" placeholder="enter password">
+//     <br />
+//     <br />
+//     <button>Click</button>
+//     <br />
+//     <br />
+//     <a href='/'> Go to Home </a>
+// </form>`)                                      
+//       });
+// app.post("/submit",(req , resp)=>{
+//     console.log("user details are :", req.body);
+    
+//        resp.send("Submit Page")                                      
+//       });
+
+//  app.listen(3800)
+
