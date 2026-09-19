@@ -245,21 +245,39 @@
                                                           
                                                         // Dynamic Routes
 
- import express from "express"
+//  import express from "express"
 
-           const app = express();  
+//            const app = express();  
   
-  app.get("/",(req , resp)=>{
-    const users=["Lichi" , "Grapes" , "Cow" , "Cat"]
-    let data =`<ul>`;
-    for(let i=0;i<users.length;i++){
-      data+=`<li><a href="user/${users[i]}">${users[i]}</a></li>`
-     }
-    data+= `</ul>`
-  resp.send(data)                                           
-     });  
-     app.get("/user/:name",(req , resp)=>{
-      const userName=req.params.name;
-   resp.send(`This is ${userName}'s profile page`)                                           
-      }); 
-  app.listen(4200) 
+//   app.get("/",(req , resp)=>{
+//     const users=["Lichi" , "Grapes" , "Cow" , "Cat"]
+//     let data =`<ul>`;
+//     for(let i=0;i<users.length;i++){
+//       data+=`<li><a href="user/${users[i]}">${users[i]}</a></li>`
+//      }
+//     data+= `</ul>`
+//   resp.send(data)                                           
+//      });  
+//      app.get("/user/:name",(req , resp)=>{
+//       const userName=req.params.name;
+//    resp.send(`This is ${userName}'s profile page`)                                           
+//       }); 
+//   app.listen(4200) 
+                             
+                                                          // API example with Dynamic Routes
+
+ import express from "express"
+ import userData from "./user.json" with {type:'json'}
+ const app = express();  
+  
+   app.get("/",(req , resp)=>{
+    console.log(userData);
+    
+    resp.send(userData)  
+    }); 
+    app.get("/user/:name",(req,resp)=>{
+      const name = req.params.name
+      let filterData =userData.filter((user)=>user.name.toLowerCase()==name.toLowerCase())
+       resp.send(filterData)  
+    })
+   app.listen(4300) 
