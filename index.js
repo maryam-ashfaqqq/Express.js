@@ -194,3 +194,21 @@
 
 //  app.listen(3800)
 
+                                                         //    External Middleware   npx nodemon index.js
+                                                    
+   import morgan from "morgan";
+    import express from "express"
+           const app = express(); 
+           app.use(morgan("dev"))
+  app.get("/",(req  , resp )=> {
+  resp.send("Home Page")
+    });
+  app.get("/about",(req , resp)=>{
+         setTimeout(() => {
+           resp.send("About Page")
+         }, 1000);
+                                               
+     });                                                     
+     
+
+  app.listen(3900)
