@@ -222,13 +222,26 @@
   // app.listen(3900)
                                                 
                                                         //  Temple Engine  (Embedded JS)
-import express from "express"
+// import express from "express"
+//            const app = express(); 
+//     app.set("view engine" , "ejs")    
+//   app.get("/",(req  , resp )=> {
+//   resp.render("home",{name:"Maryam",course:"Express"})
+//     });
+//   app.get("/about",(req , resp)=>{
+//   resp.send("About Page")                                           
+//      });               
+//      app.listen(4000) 
+                                                          //  MVC Architecture with Node 
+   import express from "express"
+import handleUser from "./controller/user.js";
            const app = express(); 
     app.set("view engine" , "ejs")    
-  app.get("/",(req  , resp )=> {
-  resp.render("home",{name:"Maryam",course:"Express"})
-    });
-  app.get("/about",(req , resp)=>{
-  resp.send("About Page")                                           
+  app.get("/",handleUser);
+  app.get("/home",(req , resp)=>{
+  resp.send("Home Page")                                           
      });               
-     app.listen(4000)
+     app.listen(4100) 
+                                                          
+                                                          
+
