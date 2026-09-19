@@ -233,15 +233,33 @@
 //      });               
 //      app.listen(4000) 
                                                           //  MVC Architecture with Node 
-   import express from "express"
-import handleUser from "./controller/user.js";
-           const app = express(); 
-    app.set("view engine" , "ejs")    
-  app.get("/",handleUser);
-  app.get("/home",(req , resp)=>{
-  resp.send("Home Page")                                           
-     });               
-     app.listen(4100) 
+//    import express from "express"
+// import handleUser from "./controller/user.js";
+//            const app = express(); 
+//     app.set("view engine" , "ejs")    
+//   app.get("/",handleUser);
+//   app.get("/home",(req , resp)=>{
+//   resp.send("Home Page")                                           
+//      });               
+//      app.listen(4100) 
                                                           
-                                                          
+                                                        // Dynamic Routes
 
+ import express from "express"
+
+           const app = express();  
+  
+  app.get("/",(req , resp)=>{
+    const users=["Lichi" , "Grapes" , "Cow" , "Cat"]
+    let data =`<ul>`;
+    for(let i=0;i<users.length;i++){
+      data+=`<li><a href="user/${users[i]}">${users[i]}</a></li>`
+     }
+    data+= `</ul>`
+  resp.send(data)                                           
+     });  
+     app.get("/user/:name",(req , resp)=>{
+      const userName=req.params.name;
+   resp.send(`This is ${userName}'s profile page`)                                           
+      }); 
+  app.listen(4200) 
