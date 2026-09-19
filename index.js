@@ -37,21 +37,21 @@
 // const publicPath =path.resolve("view")
 // app.use(express.static(publicPath));
 //   app.get("/",(req , resp)=>{
-//   const absPath = path.resolve('view/home.html')
+//   const absPath = path.resolve('views/home.html')
 //    resp.sendFile(absPath)
 // });
 
 //   app.get("/login",(req , resp)=>{
-//   const absPath = path.resolve('view/login.html')
+//   const absPath = path.resolve('views/login.html')
 //    resp.sendFile(absPath)
 // });
   
 //   app.get("/submit",(req , resp)=>{
-//   const absPath = path.resolve('view/submit.html')
+//   const absPath = path.resolve('views/submit.html')
 //    resp.sendFile(absPath)
 // });
 // app.get("/about",(req , resp)=>{
-//   const absPath = path.resolve('view/about.html')
+//   const absPath = path.resolve('views/about.html')
 //    resp.sendFile(absPath)
 // });
 
@@ -196,19 +196,39 @@
 
                                                          //    External Middleware   npx nodemon index.js
                                                     
-   import morgan from "morgan";
-    import express from "express"
+  //  import morgan from "morgan";
+  //   import express from "express"
+  //          const app = express(); 
+  //          app.use(morgan("dev"))
+  // app.get("/",(req  , resp )=> {
+  // resp.send("Home Page")
+  //   });
+  // app.get("/about",(req , resp)=>{
+  //        setTimeout(() => {
+  //          resp.send("About Page")
+  //        }, 1000);
+                                               
+  //    });                                           
+                                                        //  Error Handling Middleware           
+  //   app.use((req,resp,next)=> {
+  //     resp.status(404).send("Page not Found")
+  //     next(error)
+  //    });
+  // app.use((error,req,resp,next)=> {
+  //     resp.status(error.status || 500).send("Server Down")
+  //     next(error)
+  //    });
+     
+  // app.listen(3900)
+                                                
+                                                        //  Temple Engine  (Embedded JS)
+import express from "express"
            const app = express(); 
-           app.use(morgan("dev"))
+    app.set("view engine" , "ejs")    
   app.get("/",(req  , resp )=> {
-  resp.send("Home Page")
+  resp.render("home",{name:"Maryam",course:"Express"})
     });
   app.get("/about",(req , resp)=>{
-         setTimeout(() => {
-           resp.send("About Page")
-         }, 1000);
-                                               
-     });                                                     
-     
-
-  app.listen(3900)
+  resp.send("About Page")                                           
+     });               
+     app.listen(4000)
