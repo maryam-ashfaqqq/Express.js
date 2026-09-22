@@ -1,5 +1,6 @@
+import "./model/sql.js"   
+ import express from "express"                                                     
 
-// const express = require("express");
 
                                                  //  Render HTML element in Express
 // import express from "express"
@@ -266,18 +267,20 @@
                              
                                                           // API example with Dynamic Routes
 
- import express from "express"
- import userData from "./user.json" with {type:'json'}
- const app = express();  
+//  import express from "express"
+//  import userData from "./user.json" with {type:'json'}
+//  const app = express();  
   
-   app.get("/",(req , resp)=>{
-    console.log(userData);
+//    app.get("/",(req , resp)=>{
+//     console.log(userData);
     
-    resp.send(userData)  
-    }); 
-    app.get("/user/:name",(req,resp)=>{
-      const name = req.params.name
-      let filterData =userData.filter((user)=>user.name.toLowerCase()==name.toLowerCase())
-       resp.send(filterData)  
-    })
-   app.listen(4300) 
+//     resp.send(userData)  
+//     }); 
+//     app.get("/user/:nameclear",(req,resp)=>{
+//       const name = req.params.name
+//       let filterData =userData.filter((user)=>user.name.toLowerCase()==name.toLowerCase())
+//        resp.send(filterData)  
+//     })
+//    app.listen(4300) 
+                                                         // Database
+ 
