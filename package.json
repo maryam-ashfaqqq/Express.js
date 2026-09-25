@@ -4,9 +4,10 @@
   "description": "node js and express js ",
   "license": "ISC",
   "author": "Maryam",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "dev": "tsx watch model/src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -19,7 +20,6 @@
     "mysql2": "^3.24.4",
     "nodemailer": "^10.0.10",
     "nodemon": "^3.1.14",
-    "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
   },
   "devDependencies": {
